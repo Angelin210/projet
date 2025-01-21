@@ -1,0 +1,78 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #1e1f36, #3c4fa1);
+    /* Fond dégradé */
+    font-family: Arial, sans-serif;
+    color: white;
+}
+
+.game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    /* Largeur du conteneur */
+    max-width: 1200px;
+    gap: 20px;
+}
+
+#myCanvas {
+    width: "960";
+    height: "540";
+    border: 2px solid #fff;
+    /* Bordure blanche pour le canvas */
+    border-radius: 10px;
+    /* Coins arrondis */
+    background: #ece2e2;
+    /* Fond noir pour contraster */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+    /* Effet d'ombre */
+}
+
+#runButton {
+    background: linear-gradient(90deg, #ff5722, #ff9800);
+    border: none;
+    color: white;
+    font-size: 20px;
+    font-family: 'Press Start 2P', cursive;
+    /* Choix d'une police rétro */
+    padding: 15px 30px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 5px #d35400;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+#runButton:hover {
+    background-color: #ff6347;
+    /* Rouge clair */
+    transform: scale(1.1);
+    /* Agrandissement au survol */
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.4);
+    /* Accentuation de l'ombre */
+}
+
+#runButton:active {
+    transform: scale(1);
+    /* Réduction au clic */
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+    /* Réduction de l'ombre */
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-family: 'Press Start 2P', cursive;
+}

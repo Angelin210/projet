@@ -1,0 +1,153 @@
+.btn {
+    display: inline-flex;
+    /* Pour aligner les éléments à l'intérieur */
+    align-items: center;
+    /* Centrer verticalement */
+    padding: 12px 25px;
+    background: linear-gradient(145deg, #9a34ea, #6a21aa);
+    /* Dégradé de couleurs pour le fond */
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    /* Bordures arrondies */
+    font-size: 18px;
+    /* Taille du texte */
+    text-align: center;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3), inset 0px 2px 3px rgba(255, 255, 255, 0.1);
+    /* Ombres internes et externes */
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    /* Effet de survol */
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.4), inset 0px 2px 4px rgba(255, 255, 255, 0.2);
+    /* Augmente les ombres au survol */
+}
+
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    color: white;
+    background: linear-gradient(135deg, #1a1f36, #4c4599, #24243e);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.header h1 {
+    font-size: 3em;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.header p {
+    max-width: 600px;
+    margin: 10px auto;
+    font-size: 1.2em;
+    line-height: 1.6;
+}
+
+.btn-container {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.btn {
+    padding: 15px 30px;
+    font-size: 1.2em;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    text-align: center;
+}
+
+.btn-buy {
+    background-color: #ff6f61;
+}
+
+.btn-buy:hover {
+    background-color: #e55a4f;
+}
+
+.btn-play {
+    background-color: #4caf50;
+}
+
+.btn-play:hover {
+    background-color: #3e8e41;
+}
+
+.image-container {
+    position: relative;
+}
+
+.image-container img {
+    width: 300px;
+    animation: float 4s infinite;
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+.platforms {
+    margin-top: 50px;
+    display: flex;
+    gap: 50px;
+    align-items: center;
+}
+
+.platforms img {
+    width: 40px;
+    height: 40px;
+    filter: invert(1);
+}
+
+#login-glass {
+    display: inline-block;
+    padding: 15px 30px;
+    font-size: 24px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: white;
+    background: linear-gradient(145deg, #4aaef9, #2a79d3);
+    border: none;
+    border-radius: 25px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3), inset 0px 3px 6px rgba(255, 255, 255, 0.2);
+    text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    transition: background 0.3s, box-shadow 0.3s, transform 0.2s;
+}
+
+#login-glass:hover {
+    background: linear-gradient(145deg, #5fc2ff, #398fe6);
+    box-shadow: 0px 12px 20px rgba(0, 0, 0, 0.4), inset 0px 5px 10px rgba(255, 255, 255, 0.3);
+    transform: scale(1.05);
+}
+
+#login-glass:active {
+    background: linear-gradient(145deg, #398fe6, #2167b4);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3), inset 0px 2px 4px rgba(255, 255, 255, 0.2);
+    transform: scale(0.95);
+}
