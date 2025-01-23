@@ -113,8 +113,25 @@ function drawIntroImage() {
     ctx.drawImage(introImage, 0, 0, canvas.width, canvas.height); // Affiche l'image d'intro
 }
 
+const updateScore = async (updateData) => {
+    try {
+        const response = await fetch('http://localhost:1337/api/game-projets', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                data: updateData
+            }),
+        }); // Remplace "articles" par ta collection
+        const data = await response.json();
+        console.log(data); // Affiche les données de la collection
+    } catch (error) {
+        console.error('Erreur lors de la récupération des articles :', error);
+    }
+};
 
-function draw() {
+async function draw() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     drawBricks();
     drawBall();
@@ -133,9 +150,22 @@ function draw() {
         } else {
             lives--;
             if (!lives) {
-                alert("GAME OVER");
-                document.location.reload();
-                clearInterval(interval); // Needed for Chrome to end game
+                console.log(score);
+                const userEmail = localStorage.getItem("email")
+                console.log(userEmail);
+                try {
+                    await updateScore({
+                        email: userEmail,
+                        score: score,
+                        date: new Date(),
+                    })
+
+                    alert("GAME OVER");
+
+                    document.location.reload();
+                    clearInterval(interval); // Needed for Chrome to end game
+                } catch (error) { console.log(error); }
+
             } else {
                 x = canvas.width / 2;
                 y = canvas.height - 30;
@@ -148,6 +178,7 @@ function draw() {
         }
         requestAnimationFrame(draw);
     }
+
 
     x += dx;
     y += dy;

@@ -1,0 +1,128 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+}
+
+header,
+.header {
+    background-color: #4a53d1;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.header h1 {
+    margin: 0;
+}
+
+.header p {
+    font-size: 16px;
+}
+
+.image-container {
+    text-align: center;
+    margin: 20px 0;
+    position: relative;
+}
+
+.image-container img {
+    max-width: 200px;
+    height: auto;
+    width: 300px;
+    animation: float 4s infinite;
+}
+
+.btn-container {
+    text-align: center;
+    margin: 20px;
+}
+
+.btn-container input {
+    padding: 10px;
+    margin: 5px;
+    font-size: 16px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #782de8;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+.btn.disabled {
+    background-color: #ccc;
+    pointer-events: none;
+}
+
+.game-container {
+    text-align: center;
+    margin: 20px;
+}
+
+#myCanvas {
+    border: 1px solid #000;
+    background: #eee;
+}
+
+table {
+    margin: 20px auto;
+    border-collapse: collapse;
+    width: 90%;
+    max-width: 800px;
+    background-color: white;
+}
+
+table th,
+table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+table th {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.platforms {
+    text-align: center;
+    margin: 20px;
+}
+
+.platforms img {
+    margin: 0 10px;
+    max-width: 100px;
+    height: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th,
+td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+th {
+    background-color: #cd4141;
+}
+
+tr:nth-child(even) {
+    background-color: #c9b2b2;
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+}

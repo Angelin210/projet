@@ -28,6 +28,7 @@
 }
 
 body {
+    padding: 1px;
     margin: 0;
     font-family: 'Arial', sans-serif;
     color: white;
@@ -37,7 +38,6 @@ body {
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    overflow: hidden;
 }
 
 .header {
@@ -72,6 +72,11 @@ body {
     border-radius: 5px;
     transition: background-color 0.3s;
     text-align: center;
+
+}
+
+.disabled {
+    pointer-events: none;
 }
 
 .btn-buy {
@@ -150,4 +155,84 @@ body {
     background: linear-gradient(145deg, #398fe6, #2167b4);
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3), inset 0px 2px 4px rgba(255, 255, 255, 0.2);
     transform: scale(0.95);
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    padding: 0;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th,
+td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+th {
+    background-color: #cd4141;
+}
+
+tr:nth-child(even) {
+    background-color: #c9b2b2;
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+}
+
+.game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    /* Largeur du conteneur */
+    max-width: 1200px;
+    gap: 20px;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-family: 'Press Start 2P', cursive;
+}
+
+#runButton {
+    background: linear-gradient(90deg, #ff5722, #ff9800);
+    border: none;
+    color: white;
+    font-size: 20px;
+    font-family: 'Press Start 2P', cursive;
+    /* Choix d'une police rétro */
+    padding: 15px 30px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 5px #d35400;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+#runButton:hover {
+    background-color: #ff6347;
+    /* Rouge clair */
+    transform: scale(1.1);
+    /* Agrandissement au survol */
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.4);
+    /* Accentuation de l'ombre */
+}
+
+#runButton:active {
+    transform: scale(1);
+    /* Réduction au clic */
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+    /* Réduction de l'ombre */
 }

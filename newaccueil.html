@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classement et Jeu - BallStrikeShooter</title>
+    <link rel="stylesheet" href="stylenewaccueil.css">
+</head>
+
+<body>
+    <!-- Section Classement -->
+    <header>
+        <h1>Classement et Jeu - BallStrikeShooter</h1>
+        <p>Destroy all bricks if you can. You have 3 lives. Good luck!</p>
+    </header>
+
+    <div>
+        <h1 style="text-align: center;">Classement des joueurs</h1>
+        <table id="leaderboard">
+            <thead>
+                <tr>
+                    <th>Rang</th>
+                    <th>Nom</th>
+                    <th>Score</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Dynamically filled via JavaScript -->
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Section Jeu -->
+    <div class="image-container">
+        <img src="logojeu.png" alt="Logo du jeu">
+    </div>
+
+    <div class="btn-container">
+        <input id="email" type="email" placeholder="Email">
+        <input id="nickname" type="text" placeholder="Nickname">
+        <a href="#game-section" class="btn disabled" id="play-button">Play</a>
+    </div>
+
+    <div class="platforms">
+        <img src="windowslogo.png" alt="Windows">
+        <img src="png-transparent-steam-logo-icon.png" alt="Steam">
+    </div>
+
+    <div class="game-container" id="game-section">
+        <canvas id="myCanvas" width="960" height="540"></canvas>
+        <button id="runButton" class="btn">Start Game</button>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.auth0.com/js/auth0-spa-js/2.0/auth0-spa-js.production.js"></script>
+    <script src="accueiljeu.js"></script>
+    <script src="scriptjeu.js"></script>
+</body>
+
+</html>

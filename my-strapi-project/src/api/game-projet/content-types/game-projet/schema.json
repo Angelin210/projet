@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "game_projets",
+  "info": {
+    "singularName": "game-projet",
+    "pluralName": "game-projets",
+    "displayName": "Game",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "date": {
+      "type": "datetime"
+    },
+    "email": {
+      "type": "email",
+      "required": true
+    },
+    "score": {
+      "type": "integer",
+      "required": true
+    },
+    "nickname": {
+      "type": "string",
+      "required": true
+    }
+  }
+}
