@@ -75,9 +75,10 @@ body {
 
 }
 
+/* 
 .disabled {
     pointer-events: none;
-}
+} */
 
 .btn-buy {
     background-color: #ff6f61;
@@ -171,21 +172,21 @@ table {
 
 th,
 td {
-    border: 1px solid #ddd;
+    border: 1px solid #000000;
     padding: 8px;
     text-align: center;
 }
 
 th {
-    background-color: #cd4141;
+    background-color: #ffeaea;
 }
 
 tr:nth-child(even) {
-    background-color: #c9b2b2;
+    background-color: #8514d1;
 }
 
 tr:hover {
-    background-color: #f1f1f1;
+    background-color: #0c75ba;
 }
 
 .game-container {
@@ -235,4 +236,9 @@ tr:hover {
     /* Réduction au clic */
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
     /* Réduction de l'ombre */
+}
+
+#runButton a {
+    text-decoration: none;
+    color: #ffff;
 }

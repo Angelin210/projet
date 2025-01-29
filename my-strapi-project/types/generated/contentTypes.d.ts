@@ -525,7 +525,7 @@ export interface ApiGameProjetGameProjet extends Struct.CollectionTypeSchema {
       'api::game-projet.game-projet'
     > &
       Schema.Attribute.Private;
-    nickname: Schema.Attribute.String & Schema.Attribute.Required;
+    nickname: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
     score: Schema.Attribute.Integer & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;

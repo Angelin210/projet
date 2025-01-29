@@ -24,8 +24,7 @@
       "required": true
     },
     "nickname": {
-      "type": "string",
-      "required": true
+      "type": "string"
     }
   }
 }

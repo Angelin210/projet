@@ -28,19 +28,19 @@ auth0.createAuth0Client({
     const isAuthenticated = await auth0Client.isAuthenticated();
     console.log(isAuthenticated);
     // Met à jour l'interface en fonction de l'état de l'authentification
-    // const updateUI = async () => {
-    //     const profileElement = document.getElementById("profile");
-    //     if (isAuthenticated) {
-    //         const userProfile = await auth0Client.getUser();
-    //         profileElement.style.display = "block";
-    //         profileElement.innerHTML = `
-    //             <p>${userProfile.name}</p>
-    //             <img src="${userProfile.picture}" alt="Photo de profil" />
-    //         `;
-    //     } else {
-    //         profileElement.style.display = "none";
-    //     }
-    // };
+    const updateUI = async () => {
+        const profileElement = document.getElementById("profile");
+        if (isAuthenticated) {
+            const userProfile = await auth0Client.getUser();
+            profileElement.style.display = "block";
+            profileElement.innerHTML = `
+                 <p>${userProfile.name}</p>
+                 <img src="${userProfile.picture}" alt="Photo de profil" />
+             `;
+        } else {
+            profileElement.style.display = "none";
+        }
+    };
 
     // Attache les événements aux boutons
     const loginButton = document.getElementById("login-glass");
@@ -63,16 +63,36 @@ auth0.createAuth0Client({
     // updateUI();
 });
 
-document.getElementById("angelin").addEventListener('input', function () {
-    const value = this.value;
-    console.log(value);
-    localStorage.setItem("email", value);
-    localStorage.setItem("nickname", value);
-    document.getElementById("play-button").classList.remove('disabled');
-});
+window.addEventListener('storage', () => {
+    console.log('object');
+    if (localStorage.getItem('email') && localStorage.getItem('nickname')) {
+        console.log('tetstestes');
+        document.getElementById("play-button").classList.remove('disabled');
+    }
+    else {
+        alert("Veuillez saisir un email et un nickname !");
+    }
+})
 
-const saveNewPlayer = async (email, nickname, score) => {
+
+// document.getElementById("angelin").addEventListener('input', function () {
+//     const value = this.value;
+//     console.log(value);
+//     localStorage.setItem("email", value);
+//     document.getElementById("play-button").classList.remove('disabled');
+// });
+
+// document.getElementById("angelin2").addEventListener('input', function () {
+//     const value = this.value;
+//     console.log(value);
+//     localStorage.setItem("nickname", value);
+//     document.getElementById("play-button").classList.remove('disabled');
+// });
+
+const saveNewPlayer = async (score) => {
     try {
+        const email = localStorage.getItem("email")
+        const nickname = localStorage.getItem('nickname')
         console.log("Enregistrement du joueur :", { email, nickname, score });
 
         const response = await fetch('http://localhost:1337/api/game-projets', {
@@ -83,9 +103,9 @@ const saveNewPlayer = async (email, nickname, score) => {
             },
             body: JSON.stringify({
                 data: {
-                    email: email,
-                    nickname: nickname,
-                    score: score,
+                    email,
+                    nickname,
+                    score,
                 },
             }),
         });
@@ -99,11 +119,11 @@ const saveNewPlayer = async (email, nickname, score) => {
     }
 };
 
-const score = [
-    { name: "", score: 85 },
-    { name: "", score: 92 },
-    { name: "", score: 78 },
-];
+// const score = [
+//     { name: "", score: 85 },
+//     { name: "", score: 92 },
+//     { name: "", score: 78 },
+// ];
 
 const fetchAndSortScores = async () => {
     try {
@@ -136,30 +156,19 @@ const fetchAndSortScores = async () => {
 
 
 const handleGameEnd = async (score) => {
-    const email = localStorage.getItem("email");
-    const nickname = localStorage.getItem("nickname");
-
-    if (!email || !nickname) {
-        console.error("Les informations du joueur sont manquantes.");
-        return;
-    }
-
-    await saveNewPlayer(email, nickname, score);
+    await saveNewPlayer(score);
 };
 
 
-document.getElementById("play-button").addEventListener("click", async () => {
-    const email = localStorage.getItem("email");
-    const nickname = localStorage.getItem("nickname");
-
-    if (!email || !nickname) {
-        alert("Veuillez saisir un email et un nickname !");
-        return;
-    }
-
-    const score = Math.floor(Math.random() * 100); // Remplacez par le vrai score
-    await saveNewPlayer(email, nickname, score);
-});
+// document.getElementById("runButton").addEventListener("click", () => {
+//     const email = localStorage.getItem("email");
+//     const nickname = localStorage.getItem("nickname");
+//     console.log('azerty', email, nickname)
+//     if (!email || !nickname) {
+//         alert("Veuillez saisir un email et un nickname !");
+//         return;
+//     }
+// });
 
 
 const fetchArticles = async () => {

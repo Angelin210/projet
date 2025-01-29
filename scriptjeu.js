@@ -189,9 +189,6 @@ async function draw() {
     }
 }
 
-ballImage.onload = function () {
-    document.getElementById("runButton").addEventListener("click", draw);
-};
 
 document.addEventListener("keydown", keyDownHandler, false);
 document.addEventListener("keyup", keyUpHandler, false);
@@ -272,9 +269,9 @@ function startGame() {
 // Initialise le client Auth0 dès que le script est chargé
 
 
-document.getElementById("runButton").addEventListener("click", function () {
+window.onload = function () {
     if (interval === 0) {
         gameStarted = true;
         startGame();
     }
-});
+};
